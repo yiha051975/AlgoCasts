@@ -14,6 +14,25 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+    let totalStrLength = n * 2 - 1;
+
+    for (let i = 1; i <= n; i++) {
+        let log = '';
+
+        let rowHashTag = i * 2 - 1;
+        let emptySpaces = (totalStrLength - rowHashTag) / 2;
+
+        for (let y = 1; y <= totalStrLength; y++) {
+            if (y <= emptySpaces || y > emptySpaces + rowHashTag) {
+                log += ' ';
+            } else {
+                log += '#';
+            }
+        }
+
+        console.log(log);
+    }
+}
 
 module.exports = pyramid;
